@@ -1,0 +1,81 @@
+:root {
+    --primary-brand-color: #4D5AE5;
+    --pressed-state-color: #404BBF;
+    --dark-color: #2E2F42;
+    --success-color: #31D0AA;
+    --text-color: #434455;
+    --subtle-text-color: #8E8F99;
+    --accent-color: #E7E9FC;
+    --light-color: #F4F4FD;
+    --white-color: white;
+    --lightgray: #F6F6FE;
+    --gray: #808080;
+
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    color: var(--text-color);
+    background-color: var(--white-color);
+}
+
+p {
+    margin: 0;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+}
+
+h2 {
+    margin: 0;
+    text-align: left;
+    color: var(--dark-color);
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 1.33;
+    letter-spacing: 0.04em;
+}
+
+h3 {
+    margin: 0;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1.2;
+    letter-spacing: 0.02em;
+    color: var(--dark-color);
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+img,
+button {
+    display: block;
+}
+
+.gallery {
+    width: 1440px;
+    margin: auto;
+    padding: 24px 156px;
+    background-color: var(--white-color);
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    column-gap: calc((100% - 1080px) / 2);
+    row-gap: 24px;
+}
+
+.gallery-item {
+    width: 360px;
+    height: 200px;
+}
+
+.gallery-image {
+    width: 100%;
+    height: 100%;
+}
+
