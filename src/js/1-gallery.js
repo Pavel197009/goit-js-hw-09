@@ -67,18 +67,21 @@ const images = [
     },
   ];
   
-const div = document.querySelector(".gallery");
-let as = []; 
+const ul = document.querySelector(".gallery");
+let lis = []; 
   
 for (let image of images) {
-    let a = document.createElement("a");
-    a.classList.add("gallery-link");
-    a.href = image.original;
-    let ocum = `<img class="gallery-image" src="${image.preview}" alt="${image.description}" />`;
-    a.innerHTML = ocum;
-    as.push(a);
+    console.log(image);
+    let li = document.createElement("li");
+    li.classList.add("gallery-item");
+    let ocum = `<a class="gallery-link" href="${image.original}">
+    <img class="gallery-image" src="${image.preview}" data-source="${image.original}" alt="${image.description}" />
+    </a>`;
+    li.innerHTML = ocum;
+    console.log(li);
+    lis.push(li);
 }
-div.append(...as);
+ul.append(...lis);
 
 // use library SimpleLightbox
 const lightbox = new SimpleLightbox('.gallery a', {
