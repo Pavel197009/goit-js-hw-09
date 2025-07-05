@@ -15,12 +15,13 @@ function handleSubmit(event) {
 
 function handleInputData(event) {
     const form = event.target;
-    formData[`"${event.target.name}"`] = event.target.value;      // замена соответствующего поля объекта по таргету
+    formData[`${event.target.name}`] = event.target.value;      // замена соответствующего поля объекта по таргету
     localStorage.setItem(LOCAL_KEY, JSON.stringify(formData));    // запись объекта в локальное хранилище
   }
 
 function reloadData() {                                                   // первоначальная инициализация полей формы
-  formData = JSON.parse(localStorage.getItem("email","message")) || {};   // чтение данных с LocalStorage
+  formData = JSON.parse(localStorage.getItem(LOCAL_KEY)) || {};   // чтение данных с LocalStorage
+  console.log(formData);
   email.value = formData.email || '';                                     // запись данных в поля Input
   message.value = formData.message || '';
 }
@@ -33,7 +34,7 @@ let formData = {                                                  // иници�
 }
 
 const feedbackForm = document.querySelector(".feedback-form");    // инициализация объекта формы
-
+console.log("Step 1")
 feedbackForm.addEventListener("submit", handleSubmit);            // добавление обработчика submit
 feedbackForm.addEventListener('input', handleInputData);          // добавление обработчика input
 
