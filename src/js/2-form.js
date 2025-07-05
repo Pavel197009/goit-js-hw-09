@@ -21,7 +21,6 @@ function handleInputData(event) {
 
 function reloadData() {                                                   // первоначальная инициализация полей формы
   formData = JSON.parse(localStorage.getItem(LOCAL_KEY)) || {};   // чтение данных с LocalStorage
-  console.log(formData);
   email.value = formData.email || '';                                     // запись данных в поля Input
   message.value = formData.message || '';
 }
@@ -34,7 +33,6 @@ let formData = {                                                  // иници�
 }
 
 const feedbackForm = document.querySelector(".feedback-form");    // инициализация объекта формы
-console.log("Step 1")
 feedbackForm.addEventListener("submit", handleSubmit);            // добавление обработчика submit
 feedbackForm.addEventListener('input', handleInputData);          // добавление обработчика input
 
